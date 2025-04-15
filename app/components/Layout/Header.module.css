@@ -1,0 +1,71 @@
+/* components/Layout/Header.module.css */
+.header {
+  background-color: rgba(10, 15, 31, 0.8); /* Dark bg with transparency */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: var(--accent-glow);
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Spacing between nav items */
+}
+
+.navLink {
+  color: var(--text-muted-color);
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.5rem 0; /* Add padding for easier clicking */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navLink:hover,
+.navLink.active { /* Add an active class concept later if needed */
+  color: var(--primary-color);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}

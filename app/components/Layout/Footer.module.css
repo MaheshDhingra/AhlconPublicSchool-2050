@@ -1,0 +1,36 @@
+/* components/Layout/Footer.module.css */
+.footer {
+  background-color: #05080f; /* Even darker than main bg */
+  padding: 2rem 0;
+  margin-top: 4rem; /* Push footer down */
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted-color);
+  font-size: 0.9rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.links ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.links a {
+    color: var(--text-muted-color);
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--primary-color);
+}

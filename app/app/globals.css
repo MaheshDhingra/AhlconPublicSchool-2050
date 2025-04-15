@@ -1,26 +1,111 @@
-@import "tailwindcss";
+/* app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #00f2ff; /* Bright cyan */
+  --secondary-color: #a03eff; /* Vibrant purple */
+  --background-color: #0a0f1f; /* Deep dark blue */
+  --surface-color: #1a2035; /* Slightly lighter surface */
+  --text-color: #e0e0e0;
+  --text-muted-color: #a0a0a0;
+  --accent-glow: 0 0 15px rgba(0, 242, 255, 0.5);
+  --border-color: rgba(0, 242, 255, 0.2);
+
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --max-width: 1200px; /* Max content width */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--primary-color);
+  margin-bottom: 1rem; /* Increased spacing */
+  text-shadow: var(--accent-glow);
+  line-height: 1.3;
+}
+
+h1 { font-size: 3rem; letter-spacing: 1px; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 1.8rem; }
+
+/* Links */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Basic Button Style (can be overridden by components) */
+button, .button {
+  display: inline-block; /* Ensure proper spacing and sizing */
+  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+  color: #05080f; /* Darker color for contrast on gradient */
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(160, 62, 255, 0.4);
+  text-align: center;
+}
+
+button:hover, .button:hover {
+  transform: scale(1.05) translateY(-2px); /* Add subtle lift */
+  box-shadow: 0 0 18px rgba(0, 242, 255, 0.7);
+}
+
+/* Container class for consistent width */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Add some global section padding */
+section {
+    padding: 60px 0;
+}
+
+/* Basic Glassmorphism hint for later */
+.glass-effect {
+    background: rgba(26, 32, 53, 0.6); /* surface color with alpha */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
