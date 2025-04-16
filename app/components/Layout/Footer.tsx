@@ -1,14 +1,15 @@
-// components/Layout/Footer.tsx
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  // Use a realistic future year if desired, or keep current
+  const currentYear = new Date().getFullYear(); // Or set manually e.g., 2050
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
+      <div className={`container ${styles.container}`}>
         <div>
-          © {currentYear} Æthelred Academy. All rights reserved.
+           {/* Updated School Name */}
+          © {currentYear} Ahlcon Public School. All rights reserved.
         </div>
         <div className={styles.links}>
            <ul>

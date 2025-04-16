@@ -1,17 +1,10 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-import Header from "@/components/Layout/Header"; // We will create this
-import Footer from "@/components/Layout/Footer"; // We will create this
-import "./globals.css"; // Import global styles
+"use client";
 
-import { Orbitron, Roboto } from 'next/font/google'
-const orbitron = Orbitron({ subsets: ['latin'], variable: '--font-display' })
-const roboto = Roboto({ weight: ['300', '400', '700'], subsets: ['latin'], variable: '--font-body' })
-
-export const metadata: Metadata = {
-  title: "Ahlcon Public - School of 2050",
-  description: "Ahlcon Public - School of 2050",
-};
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import CustomCursor from "@/components/UI/CustomCursor";
+import "./globals.css";
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 export default function RootLayout({
   children,
@@ -20,11 +13,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
-      <body className={`${orbitron.variable} ${roboto.variable}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <head>
+         <title>Ahlcon Public School - Pioneering Education for 2050</title>
+         <meta name="description" content="Discover Ahlcon Public School's vision for future-ready education, integrating advanced technology and innovative learning." />
+      </head>
+      <body>
+        <ParallaxProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ParallaxProvider>
+        <CustomCursor />
       </body>
     </html>
   );

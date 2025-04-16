@@ -1,23 +1,28 @@
-/* app/globals.css */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
 
 :root {
-  --primary-color: #00f2ff; /* Bright cyan */
-  --secondary-color: #a03eff; /* Vibrant purple */
-  --background-color: #0a0f1f; /* Deep dark blue */
-  --surface-color: #1a2035; /* Slightly lighter surface */
-  --text-color: #e0e0e0;
-  --text-muted-color: #a0a0a0;
-  --accent-glow: 0 0 15px rgba(0, 242, 255, 0.5);
-  --border-color: rgba(0, 242, 255, 0.2);
-
+  --primary-color: #00f2ff;
+  --secondary-color: #a03eff;
+  --accent-color: #ff3c83;
+  --background-start-rgb: 4, 8, 20;
+  --background-end-rgb: 10, 15, 35;
+  --surface-glow-rgb: 0, 242, 255;
+  --text-color: #e8efff;
+  --text-muted-color: #a0a8c0;
+  --glow-primary: 0 0 8px rgba(0, 242, 255, 0.5), 0 0 16px rgba(0, 242, 255, 0.3);
+  --glow-secondary: 0 0 8px rgba(160, 62, 255, 0.5), 0 0 16px rgba(160, 62, 255, 0.3);
+  --glow-accent: 0 0 8px rgba(255, 60, 131, 0.6), 0 0 16px rgba(255, 60, 131, 0.3);
+  --border-color: rgba(0, 242, 255, 0.15);
+  --border-hover-color: rgba(0, 242, 255, 0.7);
   --font-display: 'Orbitron', sans-serif;
-  --font-body: 'Roboto', sans-serif;
-
-  --max-width: 1200px; /* Max content width */
+  --font-body: 'Poppins', sans-serif;
+  --max-width: 1350px;
+  --noise-texture: url('/images/noise.png');
+  --primary-color-rgb: 0, 242, 255;
+  --secondary-color-rgb: 160, 62, 255;
+  --accent-color-rgb: 255, 60, 131;
 }
 
-/* Reset and Base Styles */
 *,
 *::before,
 *::after {
@@ -26,86 +31,215 @@
   padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+html {
+  scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: rgb(var(--background-start-rgb));
+  background: linear-gradient(135deg,
+      rgb(var(--background-start-rgb)) 0%,
+      rgb(var(--background-end-rgb)) 50%,
+      #0e0b1a 100%);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
   color: var(--text-color);
   font-family: var(--font-body);
-  line-height: 1.6;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: none;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  background-image: var(--noise-texture);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  flex-grow: 1;
+  z-index: 5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   color: var(--primary-color);
-  margin-bottom: 1rem; /* Increased spacing */
-  text-shadow: var(--accent-glow);
+  margin-bottom: 1.5rem;
+  text-shadow: var(--glow-primary);
   line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-h1 { font-size: 3rem; letter-spacing: 1px; }
-h2 { font-size: 2.4rem; }
-h3 { font-size: 1.8rem; }
+h1 {
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
 
-/* Links */
+h2 {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+}
+
+h3 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+}
+
+p {
+  margin-bottom: 1.2rem;
+  max-width: 70ch;
+  color: var(--text-muted-color);
+}
+
+.lead {
+  color: var(--text-color);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
 a {
   color: var(--secondary-color);
   text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 a:hover {
   color: var(--primary-color);
-  text-shadow: 0 0 8px var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
-/* Basic Button Style (can be overridden by components) */
-button, .button {
-  display: inline-block; /* Ensure proper spacing and sizing */
-  background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-  color: #05080f; /* Darker color for contrast on gradient */
+button,
+.button {
+  display: inline-block;
+  color: #05080f;
   border: none;
-  padding: 0.8rem 1.8rem;
+  padding: 1rem 2.2rem;
   font-family: var(--font-display);
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(160, 62, 255, 0.4);
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background: linear-gradient(90deg, var(--primary-color), #00c8d8);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  background-size: 200% auto;
+  transition: transform 0.3s ease, box-shadow 0.4s ease, background-position 0.5s ease;
   text-align: center;
 }
 
 button:hover, .button:hover {
-  transform: scale(1.05) translateY(-2px); /* Add subtle lift */
-  box-shadow: 0 0 18px rgba(0, 242, 255, 0.7);
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 0 15px rgba(var(--primary-color-rgb), 0.5), 0 5px 15px rgba(0,0,0,0.3);
+  background-position: right center;
+  color: #05080f !important; 
 }
 
-/* Container class for consistent width */
+.buttonOutline {
+  display: inline-block;
+  background: transparent;
+  color: var(--text-muted-color);
+  cursor: pointer;
+  padding: 1rem 2.2rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  border: 2px solid var(--text-muted-color);
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: none;
+  transition: transform 0.3s ease, box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.buttonOutline:hover {
+  transform: scale(1.05) translateY(-3px);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background: rgba(var(--primary-color-rgb), 0.1);
+  box-shadow: 0 0 10px rgba(var(--primary-color-rgb), 0.3);
+}
+
 .container {
   width: 100%;
   max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
-/* Add some global section padding */
 section {
-    padding: 60px 0;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(var(--surface-glow-rgb), 0.05);
 }
 
-/* Basic Glassmorphism hint for later */
+section:last-child {
+  border-bottom: none;
+}
+
 .glass-effect {
-    background: rgba(26, 32, 53, 0.6); /* surface color with alpha */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari */
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(26, 32, 53, 0.5), rgba(16, 24, 48, 0.6));
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(var(--background-start-rgb), 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-effect:hover {
+  border-color: var(--border-hover-color);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(var(--background-start-rgb), 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(var(--surface-glow-rgb), 0.1);
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: rgb(var(--background-start-rgb));
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--primary-color);
+  color: rgb(var(--background-start-rgb));
+  text-shadow: none;
 }
