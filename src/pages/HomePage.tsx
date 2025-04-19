@@ -1,5 +1,4 @@
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { 
   ParticleBackground, 
@@ -53,6 +52,8 @@ const FeatureCardAnimated = (props: any) => {
 };
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       {/* 3D Hero Section */}
@@ -261,7 +262,11 @@ const HomePage = () => {
               viewport={{ once: true }}
               className="flex flex-wrap justify-center gap-4 pt-4"
             >
-              <Button size="lg" className="bg-gradient-to-r from-futuristic-blue to-futuristic-purple hover:from-futuristic-purple hover:to-futuristic-blue shadow-lg hover:shadow-futuristic-blue/50 transition-all ripple">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-futuristic-blue to-futuristic-purple hover:from-futuristic-purple hover:to-futuristic-blue shadow-lg hover:shadow-futuristic-blue/50 transition-all ripple"
+                onClick={() => navigate('/apply')}
+              >
                 Apply Now
               </Button>
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 ripple">

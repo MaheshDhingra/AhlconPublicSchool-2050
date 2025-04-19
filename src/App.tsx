@@ -28,7 +28,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-
             <Navbar />
             <div className="min-h-screen">
               <Routes>
