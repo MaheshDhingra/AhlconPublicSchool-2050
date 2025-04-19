@@ -590,3 +590,16 @@ html.cursor-hidden body,
 html.cursor-hidden * {
   cursor: none !important;
 }
+
+
+::selection {
+  background-color: hsl(var(--accent) / 0.5);
+  color: hsl(var(--accent-foreground));
+  text-shadow: 0 0 2px hsl(var(--accent-foreground));
+}
+
+::-moz-selection {
+  background-color: hsl(var(--accent) / 0.5);
+  color: hsl(var(--accent-foreground));
+  text-shadow: 0 0 2px hsl(var(--accent-foreground));
+}
