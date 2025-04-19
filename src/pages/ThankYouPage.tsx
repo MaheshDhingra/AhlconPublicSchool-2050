@@ -53,7 +53,7 @@ const ThankYouPage = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-futuristic-neon" />
-                  For any queries, contact our admission helpdesk: +91 11 2275 1208
+                  For any queries, contact our admission helpdesk: +91-11-46347777
                 </li>
               </ul>
             </div>
