@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// Pages
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import AcademicsPage from "./pages/AcademicsPage";
