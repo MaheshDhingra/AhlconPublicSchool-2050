@@ -43,6 +43,13 @@
     --sidebar-accent-foreground: 220 40% 98%;
     --sidebar-border: 224 33% 20%;
     --sidebar-ring: 180 100% 50%;
+
+    --cursor-primary: hsl(180 100% 50%); 
+    --cursor-secondary: hsl(260 100% 63%); 
+    --cursor-border: hsla(220, 40%, 98%, 0.3); 
+    --cursor-border-hover: hsl(180 100% 50%); 
+    --cursor-outline-bg: hsla(180, 100%, 50%, 0.05); 
+    --cursor-outline-bg-hover: hsla(180, 100%, 50%, 0.1); 
   }
 
   .light {
@@ -522,4 +529,64 @@
   100% {
     width: 100%;
   }
+}
+
+
+
+/* Hide wrapper on touch devices */
+.cursor-wrapper {
+  @media (pointer: coarse) {
+    display: none;
+  }
+}
+
+/* Base styles for dot & outline */
+.cursor-dot,
+.cursor-outline {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height, border-color, background-color;
+  backface-visibility: hidden;
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out,
+    border-color 0.2s ease-out,
+    background-color 0.2s ease-out,
+    transform 0.05s linear;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--cursor-primary);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  background-color: var(--cursor-outline-bg);
+  border: 1px solid var(--cursor-border);
+}
+
+.cursor-wrapper.hover-effect .cursor-dot {
+  background-color: var(--cursor-secondary);
+}
+
+.cursor-wrapper.hover-effect .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: var(--cursor-border-hover);
+  background-color: var(--cursor-outline-bg-hover);
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+html.cursor-hidden,
+html.cursor-hidden body,
+html.cursor-hidden * {
+  cursor: none !important;
 }
