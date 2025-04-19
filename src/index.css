@@ -45,7 +45,7 @@
     --sidebar-ring: 180 100% 50%;
 
     --cursor-primary: hsl(180 100% 50%); 
-    --cursor-secondary: hsl(260 100% 63%); 
+    --cursor-secondary: hsl(0, 0%, 100%); 
     --cursor-border: hsla(220, 40%, 98%, 0.3); 
     --cursor-border-hover: hsl(180 100% 50%); 
     --cursor-outline-bg: hsla(180, 100%, 50%, 0.05); 
@@ -590,7 +590,6 @@ html.cursor-hidden body,
 html.cursor-hidden * {
   cursor: none !important;
 }
-
 
 ::selection {
   background-color: hsl(var(--accent) / 0.5);
