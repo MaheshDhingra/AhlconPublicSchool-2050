@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -16,7 +15,7 @@ interface ThreeDModelProps {
 }
 
 export const ThreeDModel: React.FC<ThreeDModelProps> = ({
-  modelPath = '/models/sphere.glb',
+  modelPath = '@/public/ahlcon.glb',
   className = '',
   autoRotate = true,
   rotationSpeed = 0.005,
