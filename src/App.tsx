@@ -28,25 +28,25 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-            <Navbar />
-            <div className="min-h-screen">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/academics" element={<AcademicsPage />} />
-                <Route path="/campus" element={<CampusPage />} />
-                <Route path="/admissions" element={<AdmissionsPage />} />
-                <Route path="/news" element={<NewsPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/apply" element={<ApplyNowPage />} />
-                <Route path="/thank-you" element={<ThankYouPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
-            <Footer />
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-      );
+        <Navbar />
+        <div className="min-h-screen">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/academics" element={<AcademicsPage />} />
+            <Route path="/campus" element={<CampusPage />} />
+            <Route path="/admissions" element={<AdmissionsPage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/apply" element={<ApplyNowPage />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
-      export default App;
+export default App;
