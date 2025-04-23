@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Linkedin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
   Youtube,
   ArrowRight
 } from "lucide-react";
@@ -20,31 +20,53 @@ const Footer = () => {
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
+  
     if (!email) {
       window.alert("Please enter a valid email address.");
       return;
     }
+  
     setLoading(true);
+  
     try {
-      const res = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           to: email,
-          subject: 'Subscription Confirmation',
-          html: `<p>Thank you for subscribing to Ahlcon Public School newsletter!</p>`
-        })
+          subject: "Subscription Confirmation",
+          html: `<p>Thank you for subscribing to Ahlcon Public School newsletter!</p>`,
+        }),
       });
-      if (!res.ok) throw new Error('Failed to subscribe');
-      window.alert("Subscribed successfully! Check your inbox.");
+  
+      // Read raw text first
+      const raw = await res.text();
+      let data: { message?: string; error?: string } = {};
+  
+      // Try parsing JSON; if it fails, use text/status fallback
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch (parseErr) {
+        console.warn("Non-JSON response:", raw);
+        data = { message: raw || res.statusText };
+      }
+  
+      if (!res.ok) {
+        console.error("Subscription API failed:", data);
+        throw new Error(data.error || res.statusText || "Failed to subscribe");
+      }
+  
+      window.alert(data.message || "Subscribed successfully!");
       setEmail("");
     } catch (err) {
-      console.error(err);
-      window.alert("Something went wrong. Please try again later.");
+      console.error("Error in handleSubscribe:", err);
+      window.alert((err as Error).message);
     } finally {
       setLoading(false);
     }
   };
+  
+
 
   return (
     <footer className="bg-futuristic-dark border-t border-white/10">
@@ -62,8 +84,8 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-gray-400 text-sm">
-              Ahlcon Public School is at the forefront of educational innovation, 
-              blending traditional academic excellence with cutting-edge technology 
+              Ahlcon Public School is at the forefront of educational innovation,
+              blending traditional academic excellence with cutting-edge technology
               to prepare students for the challenges of the future.
             </p>
             <div className="flex space-x-3">
