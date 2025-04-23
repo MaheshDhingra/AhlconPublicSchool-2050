@@ -27,9 +27,11 @@ const Footer = () => {
     }
   
     setLoading(true);
-  
+    
+    const EMAIL_API_URI="https://localhost:8080/api/send-email"; 
+
     try {
-      const res = await fetch("/api/send-email", {
+      const res = await fetch(EMAIL_API_URI, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
