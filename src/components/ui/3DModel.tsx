@@ -3,8 +3,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
+
+
+const schoolModel = '/ahlcon.glb'; 
+
 interface ThreeDModelProps {
-  modelPath?: string;
+  modelPath?: string; 
   className?: string;
   autoRotate?: boolean;
   rotationSpeed?: number;
@@ -15,7 +19,7 @@ interface ThreeDModelProps {
 }
 
 export const ThreeDModel: React.FC<ThreeDModelProps> = ({
-  modelPath = '@/public/ahlcon.glb',
+  modelPath = schoolModel,
   className = '',
   autoRotate = true,
   rotationSpeed = 0.005,
@@ -34,10 +38,11 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
   useEffect(() => {
     if (!containerRef.current) return;
     
-    // Create scene, camera, and renderer
+    
     const scene = new THREE.Scene();
     sceneRef.current = scene;
-    scene.background = new THREE.Color(backgroundColor);
+    // Make background transparent
+    scene.background = null;
     
     const camera = new THREE.PerspectiveCamera(
       45,
@@ -48,7 +53,8 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     cameraRef.current = camera;
     camera.position.z = 5;
     
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    // Set alpha: true for transparent background
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     rendererRef.current = renderer;
     renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -56,7 +62,7 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     containerRef.current.appendChild(renderer.domElement);
     
-    // Add lights
+    
     const ambientLight = new THREE.AmbientLight(ambientLightColor, 0.5);
     scene.add(ambientLight);
     
@@ -68,13 +74,13 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     directionalLight.castShadow = true;
     scene.add(directionalLight);
     
-    // Add basic controls
+    
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
     controls.enableZoom = true;
     
-    // Placeholder sphere in case model fails to load
+    
     const geometry = new THREE.SphereGeometry(1, 32, 32);
     const material = new THREE.MeshStandardMaterial({
       color: 0x00f9ff,
@@ -89,53 +95,51 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     scene.add(sphere);
     modelRef.current = sphere;
     
-    // Attempt to load the actual model if available
-    try {
-      const loader = new GLTFLoader();
-      loader.load(
-        modelPath,
-        (gltf) => {
-          scene.remove(sphere); // Remove placeholder
-          
-          // Center and normalize model size
-          const model = gltf.scene;
-          model.traverse((child) => {
-            if (child instanceof THREE.Mesh) {
-              child.castShadow = true;
-              child.receiveShadow = true;
-            }
-          });
-          
-          // Center model
-          const box = new THREE.Box3().setFromObject(model);
-          const center = box.getCenter(new THREE.Vector3());
-          model.position.x = -center.x;
-          model.position.y = -center.y;
-          model.position.z = -center.z;
-          
-          // Scale model to reasonable size
-          const size = box.getSize(new THREE.Vector3());
-          const maxDim = Math.max(size.x, size.y, size.z);
-          if (maxDim > 2) {
-            const scale = 2 / maxDim;
-            model.scale.set(scale, scale, scale);
-          }
-          
-          scene.add(model);
-          modelRef.current = model;
-        },
-        (xhr) => {
-          console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
-        },
-        (error) => {
-          console.error('An error happened loading the model:', error);
-        }
-      );
-    } catch (error) {
-      console.error('Error loading model:', error);
-    }
     
-    // Add particle effect
+
+    
+    const loader = new GLTFLoader();
+    loader.load(
+      modelPath,
+      (gltf) => {
+      scene.remove(sphere); 
+
+      
+      const model = gltf.scene;
+      model.traverse((child: THREE.Object3D) => {
+        if ((child as THREE.Mesh).isMesh) {
+        (child as THREE.Mesh).castShadow = true;
+        (child as THREE.Mesh).receiveShadow = true;
+        }
+      });
+
+      
+      const box = new THREE.Box3().setFromObject(model);
+      const center = box.getCenter(new THREE.Vector3());
+      model.position.x = -center.x;
+      model.position.y = -center.y;
+      model.position.z = -center.z;
+
+      
+      const size = box.getSize(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      if (maxDim > 2) {
+        const scale = 2 / maxDim;
+        model.scale.set(scale, scale, scale);
+      }
+
+      scene.add(model);
+      modelRef.current = model;
+      },
+      (xhr) => {
+      if (xhr.lengthComputable) {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+      }
+      },
+      (error) => {
+      console.error('An error happened loading the model:', error);
+      }
+    );
     const particlesGeometry = new THREE.BufferGeometry();
     const particleCount = 500;
     const posArray = new Float32Array(particleCount * 3);
@@ -157,7 +161,7 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
     scene.add(particlesMesh);
     
-    // Animation loop
+    
     const animate = () => {
       frameIdRef.current = requestAnimationFrame(animate);
       
@@ -173,7 +177,7 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     
     animate();
     
-    // Handle window resize
+    
     const handleResize = () => {
       if (
         !containerRef.current ||
@@ -194,7 +198,7 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     
     window.addEventListener('resize', handleResize);
     
-    // Cleanup
+    
     return () => {
       window.removeEventListener('resize', handleResize);
       
@@ -221,6 +225,7 @@ export const ThreeDModel: React.FC<ThreeDModelProps> = ({
     <div 
       ref={containerRef} 
       className={`w-full h-[400px] rounded-lg overflow-hidden ${className}`}
+      style={{ background: 'transparent' }}
     />
   );
 };
