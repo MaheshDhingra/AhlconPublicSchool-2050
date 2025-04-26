@@ -46,7 +46,7 @@ const CampusPage = () => {
             <div className="relative">
               <div className="w-full h-[400px] rounded-lg overflow-hidden holographic">
                 <img
-                  src="/public/school.png"
+                  src="/public/school-2.png"
                   alt="Ahlcon Public School Campus"
                   className="w-full h-full object-cover"
                 />

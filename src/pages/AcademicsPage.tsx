@@ -51,7 +51,7 @@ const AcademicsPage = () => {
             <div className="order-2 md:order-1">
               <div className="w-full h-[400px] rounded-lg overflow-hidden holographic">
                 <img 
-                  src="/public/school.png" 
+                  src="/public/school-2.png" 
                   alt="AI-Enhanced Learning at Ahlcon" 
                   className="w-full h-full object-cover"
                 />

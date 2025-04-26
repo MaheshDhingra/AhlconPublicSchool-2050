@@ -120,7 +120,7 @@ const NewsPage = () => {
               <FuturisticCard className="space-y-4">
                 <div className="relative">
                   <img 
-                    src="/public/school.png" 
+                    src="/public/school-2.png" 
                     alt="Students Win International Bioengineering Competition" 
                     className="w-full rounded-lg object-cover aspect-video" 
                   />
