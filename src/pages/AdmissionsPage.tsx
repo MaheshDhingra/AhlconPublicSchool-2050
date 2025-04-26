@@ -56,7 +56,7 @@ const AdmissionsPage = () => {
             <div className="relative">
               <div className="w-full h-[400px] rounded-lg overflow-hidden holographic">
                 <img 
-                  src="https://source.unsplash.com/photo-1485827404703-89b55fcc595e" 
+                  src="/public/school.png" 
                   alt="Students at Ahlcon" 
                   className="w-full h-full object-cover"
                 />

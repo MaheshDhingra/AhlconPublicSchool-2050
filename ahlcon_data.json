@@ -1,0 +1,262 @@
+{
+  "school_name": "Ahlcon Public School",
+  "address": "Mayur Vihar Phase-1, Delhi 110091",
+  "contact": {
+    "phone": "91-11-46347777",
+    "email": "apsmayurvihar1@gmail.com"
+  },
+  "overview": "A dynamic co-educational English medium school affiliated to the CBSE, established in 1988 by Shanti Devi Progressive Education Society, committed to holistic education through scientific temper and cultural foundation.",
+  "motto": "Light to Enlighten",
+  "vision": "Ensure all round development in students by inculcating a quest for knowledge, skill, competence and an open-minded outlook to confront life's challenges.",
+  "mission": [
+    "Provide cohesive learning programs integrating academic standards with leadership, sports and performing arts.",
+    "Offer an inclusive environment promoting empathy, integrity, tolerance, ethical behavior and global consciousness.",
+    "Deliver professional development for teachers to inspire independent thinking, reasoning, and decision making.",
+    "Foster collaboration among school, family, and community for harmonious and progressive world."
+  ],
+  "core_values": {
+    "Integrity": "Building strong characters acting ethically and consistently.",
+    "Acceptance": "Confronting ignorance with knowledge and prejudice with empathy.",
+    "Global consciousness": "Fostering universal awareness and appreciation of diverse cultures."
+  },
+  "recognition_and_affiliation": {
+    "school_code": "25020",
+    "recognized_by": "Directorate of Education, Govt. of NCT, Delhi",
+    "recognition_letter": "DDE/EAST/Rec./89/1687 dated 30.05.1989",
+    "affiliated_to": "CBSE",
+    "affiliation_number": "2730168"
+  },
+  "board_of_management": [
+    {
+      "name": "Shri Vikaas Ahluwalia",
+      "designation": "Chairman"
+    },
+    {
+      "name": "Dr. Ashok K Pandey",
+      "designation": "Director"
+    },
+    {
+      "name": "Dr. Deepak Raj Singh Bisht",
+      "designation": "Principal APS & Member Secretary"
+    },
+    {
+      "name": "Shri Sanjay Yadav",
+      "designation": "Member, Principal, Ahlcon International School"
+    },
+    {
+      "name": "Shri Arun Sahai",
+      "designation": "Member"
+    },
+    {
+      "name": "Shri S. K. Sachdeva",
+      "designation": "Member"
+    },
+    {
+      "name": "Shri M K G Pillai",
+      "designation": "Member"
+    },
+    {
+      "name": "Shri Vinay Pal",
+      "designation": "Member"
+    },
+    {
+      "name": "Smt Mamta Julka",
+      "designation": "Teacher's Representative"
+    },
+    {
+      "name": "Smt Mili Dutta",
+      "designation": "Teacher's Representative"
+    },
+    {
+      "name": "Shri Shaleen Khetarpaul",
+      "designation": "PTA Representative"
+    },
+    {
+      "name": "Ms. Arti Gupta",
+      "designation": "PTA Representative"
+    }
+  ],
+  "pta_executive_committee": [
+    {
+      "name": "Dr. Deepak Raj Singh Bisht",
+      "designation": "Chairman"
+    },
+    {
+      "name": "Mr. Shaleen Khetarpaul",
+      "designation": "Vice Chairman (Parent)"
+    },
+    {
+      "name": "Ms Mamta Julka",
+      "designation": "Vice Chairman (Teacher)"
+    },
+    {
+      "name": "Ms Arti Gupta",
+      "designation": "Hony. Secretary (Parent)"
+    },
+    {
+      "name": "Mr. Munish Kumar",
+      "designation": "Hony. Joint Secretary (Parent)"
+    },
+    {
+      "name": "Ms Aarathi Kumar",
+      "designation": "Hony. Joint Secretary (Teacher)"
+    },
+    {
+      "name": "Ms Aditi Narain",
+      "designation": "Hony. Treasurer (Teacher)"
+    },
+    {
+      "name": "Mr. Anish Verma",
+      "designation": "Member - Parent"
+    },
+    {
+      "name": "Dr. Meera M.P.",
+      "designation": "Member - Parent"
+    },
+    {
+      "name": "Dr. Achla Maini Rajput",
+      "designation": "Member - Parent"
+    },
+    {
+      "name": "Mr. Karan Bansal",
+      "designation": "Member - Parent"
+    },
+    {
+      "name": "Mr. Akhil Aggarwal",
+      "designation": "Member - Parent"
+    },
+    {
+      "name": "Ms Mridula Renjit",
+      "designation": "Member - Teacher"
+    },
+    {
+      "name": "Ms Dipika Manglik",
+      "designation": "Member - Teacher"
+    },
+    {
+      "name": "Ms Divya Vohra",
+      "designation": "Member - Teacher"
+    },
+    {
+      "name": "Ms Mili Dutta",
+      "designation": "Member - Teacher"
+    }
+  ],
+  "infrastructure_facilities": [
+    "Campus Tour",
+    "Library Jr.",
+    "Library Sr.",
+    "Labs",
+    "Smart Classrooms",
+    "Sports",
+    "Auditorium",
+    "Creative Centre for Tiny Tots",
+    "Canteen",
+    "Transport",
+    "Medical Room",
+    "Yoga Room",
+    "Virtual Tour",
+    "Books & Uniform"
+  ],
+  "academics": {
+    "curriculum": [
+      "Foundation Stage",
+      "Preparatory Stage",
+      "Middle Stage",
+      "Secondary Stage"
+    ],
+    "examination": [
+      "Foundation Stage",
+      "Preparatory Stage",
+      "Middle Stage",
+      "Secondary Stage"
+    ],
+    "assessments_and_evaluations": [
+      "Foundation Stage",
+      "Preparatory Stage",
+      "Middle Stage",
+      "Secondary Stage"
+    ],
+    "assignments": [
+      "Preparatory Stage",
+      "Middle Stage",
+      "Secondary Stage"
+    ],
+    "holiday_homework": [
+      "Foundation Stage",
+      "Preparatory Stage",
+      "Middle Stage",
+      "Secondary Stage"
+    ],
+    "cbse_results": [
+      "Class 10 th",
+      "Class 12 th",
+      "Results highlights"
+    ]
+  },
+  "admission": [
+    "Foundation Stage",
+    "Preparatory Stage",
+    "Middle Stage",
+    "Secondary Stage"
+  ],
+  "news_and_events": [
+    {
+      "date": "23 April 2025",
+      "title": "Educational Trip to Mother Dairy"
+    },
+    {
+      "date": "22 April 2025",
+      "title": "Special Assembly by PPB"
+    },
+    {
+      "date": "17 April 2025",
+      "title": "Scoops of Joy on Ice Cream Day!"
+    },
+    {
+      "date": "15 April 2025",
+      "title": "Dance Workshop - 15/4/25"
+    },
+    {
+      "date": "11 April 2025",
+      "title": "MILK DAY - 11th April"
+    },
+    {
+      "date": "08 April 2025",
+      "title": "Music workshop - 8/4/25"
+    }
+  ],
+  "achievements": [
+    {
+      "year": "2023-24",
+      "details": [
+        "ATL School of the Month: August 2023",
+        "School Excellence Award"
+      ]
+    },
+    {
+      "year": "2022-23",
+      "details": [
+        "School Excellence Award"
+      ]
+    },
+    {
+      "year": "2019-2022",
+      "details": [
+        "International School Award"
+      ]
+    }
+  ],
+  "links": {
+    "mission_and_vision": "https://ahlconpublicschool.com/about-us",
+    "recognition_and_affiliation": "https://ahlconpublicschool.com/about-us/recognition-and-affiliation",
+    "board_of_management": "https://ahlconpublicschool.com/about-us/board-of-management",
+    "pta": "https://ahlconpublicschool.com/about-us/pta",
+    "administration": "https://ahlconpublicschool.com/about-us/administration",
+    "campus_tour": "https://ahlconpublicschool.com/infrastructure/campus-tour",
+    "library_jr": "https://ahlconpublicschool.com/infrastructure/library-jr",
+    "library_sr": "https://ahlconpublicschool.com/infrastructure/library-sr",
+    "labs": "https://ahlconpublicschool.com/infrastructure/labs",
+    "smart_classrooms": "https://ahlconpublicschool.com/infrastructure/smart-classrooms"
+  }
+}

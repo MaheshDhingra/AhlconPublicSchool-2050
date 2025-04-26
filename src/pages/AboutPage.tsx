@@ -38,7 +38,7 @@ const AboutPage = () => {
             <div className="relative">
               <div className="w-full h-[400px] rounded-lg overflow-hidden holographic">
                 <img 
-                  src="https://source.unsplash.com/photo-1485827404703-89b55fcc595e" 
+                  src="/public/school.png" 
                   alt="Ahlcon Public School Campus" 
                   className="w-full h-full object-cover"
                 />
@@ -208,47 +208,48 @@ const AboutPage = () => {
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="https://source.unsplash.com/photo-1487058792275-0ad4aaf24ca7" 
-                  alt="Dr. Ashok Pandey" 
+                  src="/public/1.png" 
+                  alt="Dr. Deepak Raj Singh Bisht" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">Dr. Ashok Pandey</h3>
+              <h3 className="text-xl font-bold text-white">Dr. Deepak Raj Singh Bisht</h3>
               <p className="text-futuristic-neon">Principal & Director</p>
               <p className="text-gray-400 mt-2">
-                Leading Ahlcon's transformation into a future-ready institution with over 25 years of experience in educational innovation.
+                With more than 25 years steering educational innovation, Dr. Deepak Raj Singh Bisht guides Ahlcon Public School toward an era of visionary leadership and academic excellence.
               </p>
             </FuturisticCard>
-            
+
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="https://source.unsplash.com/photo-1526374965328-7f61d4dc18c5" 
-                  alt="Dr. Neha Sharma" 
+                  src="/public/2.png" 
+                  alt="Mamta Mahale" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">Dr. Neha Sharma</h3>
-              <p className="text-futuristic-purple">AI Integration Head</p>
+              <h3 className="text-xl font-bold text-white">Mamta Mahale</h3>
+              <p className="text-futuristic-purple">Senior Headmistress</p>
               <p className="text-gray-400 mt-2">
-                Expert in educational technology and AI-enhanced learning systems, shaping our adaptive curriculum.
+                Mamta Mahale leverages her deep expertise in educational technology to foster a vibrant learning environment that bridges innovative pedagogy with time-honored traditions.
               </p>
             </FuturisticCard>
-            
+
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="https://source.unsplash.com/photo-1518770660439-4636190af475" 
-                  alt="Prof. Raj Kumar" 
+                  src="/public/3.png" 
+                  alt="Smita Bansal" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">Prof. Raj Kumar</h3>
-              <p className="text-futuristic-teal">Quantum Sciences Chair</p>
+              <h3 className="text-xl font-bold text-white">Smita Bansal</h3>
+              <p className="text-futuristic-teal">ATL Lab</p>
               <p className="text-gray-400 mt-2">
-                Internationally acclaimed quantum physicist heading our advanced science programs and research initiatives.
+                A trailblazer in quantum physics, Smita Bansal spearheads our ATL Lab, igniting students' curiosity and paving the way for breakthroughs in science and technology.
               </p>
             </FuturisticCard>
+            
           </div>
           
           <div className="text-center mt-10">

@@ -202,7 +202,8 @@ const ApplyNowPage = () => {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="kindergarten">Kindergarten</SelectItem>
+                            <SelectItem value="kg">KG</SelectItem>
+                            <SelectItem value="ukg">UKG</SelectItem>
                           <SelectItem value="grade1">Grade 1</SelectItem>
                           <SelectItem value="grade2">Grade 2</SelectItem>
                           <SelectItem value="grade3">Grade 3</SelectItem>
