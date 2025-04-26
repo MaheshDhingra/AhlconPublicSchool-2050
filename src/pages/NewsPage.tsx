@@ -58,7 +58,7 @@ const NewsPage = () => {
               <FuturisticCard className="space-y-4">
                 <div className="relative">
                   <img 
-                    src="https://source.unsplash.com/photo-1677495353854-670994792795/800x600" 
+                    src="/public/school.png" 
                     alt="Ahlcon's AI Research Lab Achieves Breakthrough" 
                     className="w-full rounded-lg object-cover aspect-video" 
                   />
@@ -120,7 +120,7 @@ const NewsPage = () => {
               <FuturisticCard className="space-y-4">
                 <div className="relative">
                   <img 
-                    src="https://source.unsplash.com/photo-1621905244246-d435977ef964/800x600" 
+                    src="/public/school.png" 
                     alt="Students Win International Bioengineering Competition" 
                     className="w-full rounded-lg object-cover aspect-video" 
                   />
@@ -265,7 +265,7 @@ const NewsPage = () => {
             <FuturisticCard>
               <div className="relative">
                 <img 
-                  src="https://source.unsplash.com/photo-1623939374516-49345ca45e7a/600x400" 
+                  src="/public/school.png" 
                   alt="Ahlcon Students in Quantum Computing Lab" 
                   className="w-full rounded-lg object-cover aspect-video" 
                 />
@@ -338,7 +338,7 @@ const NewsPage = () => {
             <FuturisticCard>
               <div className="relative">
                 <img 
-                  src="https://source.unsplash.com/photo-1588981857453-19f4d6d2c1c5/600x400" 
+                  src="/public/school.png" 
                   alt="Holographic Classroom Experience" 
                   className="w-full rounded-lg object-cover aspect-video" 
                 />
