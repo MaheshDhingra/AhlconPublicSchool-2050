@@ -38,7 +38,7 @@ const AboutPage = () => {
             <div className="relative">
               <div className="w-full h-[400px] rounded-lg overflow-hidden holographic">
                 <img 
-                  src="/public/school.png" 
+                  src="/school.png" 
                   alt="Ahlcon Public School Campus" 
                   className="w-full h-full object-cover"
                 />
@@ -208,7 +208,7 @@ const AboutPage = () => {
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="/public/1.png" 
+                  src="/1.png" 
                   alt="Dr. Deepak Raj Singh Bisht" 
                   className="w-full h-full object-cover"
                 />
@@ -223,7 +223,7 @@ const AboutPage = () => {
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="/public/2.png" 
+                  src="/2.png" 
                   alt="Mamta Mahale" 
                   className="w-full h-full object-cover"
                 />
@@ -238,7 +238,7 @@ const AboutPage = () => {
             <FuturisticCard>
               <div className="aspect-square rounded-xl overflow-hidden mb-4">
                 <img 
-                  src="/public/3.png" 
+                  src="/3.png" 
                   alt="Smita Bansal" 
                   className="w-full h-full object-cover"
                 />

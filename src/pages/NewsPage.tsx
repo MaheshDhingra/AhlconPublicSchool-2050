@@ -37,7 +37,7 @@ const NewsPage = () => {
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <SectionTitle 
               title="Stay Informed" 
-              subtitle="The latest news, breakthroughs, and stories from Ahlcon Public School"
+              subtitle="The latest news, breakthroughs, and stories from/School"
               center={true}
             />
             <p className="text-gray-300 leading-relaxed">
@@ -58,7 +58,7 @@ const NewsPage = () => {
               <FuturisticCard className="space-y-4">
                 <div className="relative">
                   <img 
-                    src="/public/school.png" 
+                    src="/school.png" 
                     alt="Ahlcon's AI Research Lab Achieves Breakthrough" 
                     className="w-full rounded-lg object-cover aspect-video" 
                   />
@@ -120,7 +120,7 @@ const NewsPage = () => {
               <FuturisticCard className="space-y-4">
                 <div className="relative">
                   <img 
-                    src="/public/school-2.png" 
+                    src="/school-2.png" 
                     alt="Students Win International Bioengineering Competition" 
                     className="w-full rounded-lg object-cover aspect-video" 
                   />
@@ -265,7 +265,7 @@ const NewsPage = () => {
             <FuturisticCard>
               <div className="relative">
                 <img 
-                  src="/public/school.png" 
+                  src="/school.png" 
                   alt="Ahlcon Students in Quantum Computing Lab" 
                   className="w-full rounded-lg object-cover aspect-video" 
                 />
@@ -338,7 +338,7 @@ const NewsPage = () => {
             <FuturisticCard>
               <div className="relative">
                 <img 
-                  src="/public/school.png" 
+                  src="/school.png" 
                   alt="Holographic Classroom Experience" 
                   className="w-full rounded-lg object-cover aspect-video" 
                 />
